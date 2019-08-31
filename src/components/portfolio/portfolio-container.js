@@ -1,4 +1,6 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
+import axios from 'axios';
+
 
 import PortfolioItem from "./portfolio-item";
 
@@ -9,19 +11,17 @@ export default class PortfolioContainer extends Component {
         this.state = {
             pageTitle: "This is my Portfolio",
             isLoading: false,
-            data: [
-                {title: "Arbys", url: "arbys.com", category: "FastFood"},
-                {title: "Rocky Mountain ATV/MC", url: "rockymountainatvmc.com", category: "Parts"},
-                {title: "Bottega", url: "bottega.tech", category: "Coding"},
-                {title: "DevCamp", url: "devcamp.com", category: "Coding"}
-
-            ]
+            data: []
         }
 
         this.handleFilter = this.handleFilter.bind(this);
-
+        this.getPortfolioItems = this.getPortfolioItems.bind(this);
         
     }
+
+    
+
+
 
     handleFilter(filter) {
         this.setState({
@@ -32,13 +32,31 @@ export default class PortfolioContainer extends Component {
 
     }
 
+    getPortfolioItems() {
+        axios.get('https://chandlerking.devcamp.space/portfolio/portfolio_items')
+      .then(response => {
+        this.setState({
+            data: response.data.portfolio_items
+        });
+      })
+      .catch(error => {
+        console.log(error);
+      })
+      }
 
     portfolioItems() {
         return this.state.data.map(i => {
-            return <PortfolioItem title={i.title} url={i.url} />;
+            return <PortfolioItem 
+            key={i.id} 
+            item={i}
+            />;
         })
     }
+    
 
+    componentDidMount() {
+        this.getPortfolioItems();
+    }
  
 
     render() {
@@ -46,12 +64,11 @@ export default class PortfolioContainer extends Component {
             return <div>Loading...</div>
         }
         return (
-            <div>
-                <h2>{this.state.pageTitle}</h2>
+            <div className="portfolio-items-wrapper">
+                <button className="btn" onClick={() => this.handleFilter("Enterprise")}>Enterprise</button>
+                <button className="btn" onClick={() => this.handleFilter("Technology")}>Technology</button>
+                <button className="btn" onClick={() => this.handleFilter("Social Media")}>Social Media</button>
                 {this.portfolioItems()}
-                <button onClick={() => this.handleFilter("FastFood")}>FastFood</button>
-                <button onClick={() => this.handleFilter("Coding")}>Coding</button>
-                <button onClick={() => this.handleFilter("Parts")}>Parts</button>
             </div>
             
             );
