@@ -1,38 +1,49 @@
-import React, { Component } from 'react';
+import React from 'react';
+import axios from 'axios';
+import { withRouter } from 'react-router';
 import { NavLink } from 'react-router-dom';
 
-export default class NavigationContainer extends Component {
-    constructor() {
-        super();
 
+const NavigationContainer = props => {
     
+    const handleSignOut = () => {
+        axios.delete("https://api.devcamp.space/logout", { withCredentials: true }).then(response => {
+            if (response.status === 200) {
+                props.history.push("/");
+                props.handleSuccessfulLogout();
+            }
+            return response.data;
+        }).catch(error => {
+            console.log("Error signing out:", error);
+        })
     }
 
-    render() {
-        return (
-            <div>
-            <div className="nav-wrapper">
-                <div className="left-side">
-                    <div className="nav-link-wrapper">
-                        <NavLink exact to="/" activeClassName="nav-link-active">Home</NavLink>
-                    </div>
-                    <div className="nav-link-wrapper">
-                        <NavLink to="/about-me" activeClassName="nav-link-active">About</NavLink>
-                    </div>
-                    <div className="nav-link-wrapper">
-                        <NavLink  to="/blog" activeClassName="nav-link-active">Blog</NavLink>
-                    </div>
-                    <div className="nav-link-wrapper">
-                        <NavLink to="/contact-me" activeClassName="nav-link-active">Contact</NavLink>
-                    </div>
-                    <div className="nav-link-wrapper">
-                        {false ? <NavLink to="/add-blog" activeClassName="nav-link-active">Add Blog</NavLink> : null }  
-                    </div> 
-                </div>
-                <div className="right-side">Chandler King</div>
+    return (
+      <div className="nav-wrapper">
+        <div className="left-side">
+            <div className="nav-link-wrapper">
+                <NavLink exact to="/" activeClassName="nav-link-active">Home</NavLink>
             </div>
+            <div className="nav-link-wrapper">
+                <NavLink to="/about-me" activeClassName="nav-link-active">About</NavLink>
             </div>
-        )
-    }
+            <div className="nav-link-wrapper">
+                <NavLink  to="/blog" activeClassName="nav-link-active">Blog</NavLink>
+            </div>
+            <div className="nav-link-wrapper">
+                <NavLink to="/contact-me" activeClassName="nav-link-active">Contact</NavLink>
+            </div>
+            <div className="nav-link-wrapper">
+                {props.loggedInStatus === "LOGGED_IN" ? <NavLink to="/manage-blog" activeClassName="nav-link-active">Blog Manager</NavLink> : null }  
+            </div> 
+            <div className="nav-link-wrapper">
+                {props.loggedInStatus === "LOGGED_IN" ? <NavLink to="/manage-portfolio" activeClassName="nav-link-active">Portfolio Manager</NavLink> : null }  
+            </div> 
+        </div>
+        <div className="right-side">Chandler King</div>
+        {props.loggedInStatus === "LOGGED_IN" ? <a onClick={handleSignOut}>Sign Out</a> : null}
+      </div>
+    );
+};
 
-}
+export default withRouter(NavigationContainer);

@@ -7,11 +7,14 @@ export default class Login extends Component {
 
   this.state = {
       email: "",
-      password: ""
+      password: "",
+      errorText: "",
   }
   this.handleChange = this.handleChange.bind(this);
   this.handleSubmit = this.handleSubmit.bind(this);
 }
+
+
 
 handleSubmit(event) {
     axios.post("https://api.devcamp.space/sessions", 
@@ -23,19 +26,41 @@ handleSubmit(event) {
     },
     { withCredentials: true }
     ).then(response => {
-        console.log("response", response);
+        if (response.data.status === "created") {
+            this.props.handleSuccessfulAuth();
+        } else {
+            this.setState({
+                errorText: "Wrong E-mail, or password was entered. Please try again."
+            });
+            this.props.handleUnSuccessfulAuth();
+        }
+    }).catch(error => {
+        this.setState({
+            errorText: "An error occurred. Please try again shortly."
+        });
+        this.props.handleUnSuccessfulAuth();
     });
     event.preventDefault();
 }
+
+
+
+
 handleChange(event) {
     this.setState({
-        [event.target.name]: event.target.value 
+        [event.target.name]: event.target.value,
+        errorText: "" 
     })
 }
+
+
+
+
   render() {
     return(
         <div>
             <h1>LOGIN TO ACCESS YOUR DASHBOARD</h1>
+            <div>{this.state.errorText}</div>
             <form onSubmit={this.handleSubmit}>
                 <input 
                     type="email"
