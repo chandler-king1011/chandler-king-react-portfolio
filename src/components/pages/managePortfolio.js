@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-export default class  extends Component {
+
+import PortfolioSidebarList from '../portfolio/portfolio-sidebar-list';
+import PortfolioManagerForm from '../portfolio/portfolio-manager-form';
+
+
+export default class managePortfolio extends Component {
   constructor() {
   super();
 
@@ -9,6 +14,31 @@ export default class  extends Component {
     portfolioItems: []
   }
   this.getPortfolioItems = this.getPortfolioItems.bind(this);
+  this.handleSuccessfulFormSubmission = this.handleSuccessfulFormSubmission.bind(this);
+  this.handleFormSubmissionError = this.handleFormSubmissionError.bind(this);
+  this.handleDeleteClick = this.handleDeleteClick.bind(this);
+}
+
+handleDeleteClick(portItem) {
+    axios.delete(`https://api.devcamp.space/portfolio/portfolio_items/${portItem.id}`, { withCredentials: true }).then(response => {
+      this.setState({
+        portfolioItems: this.state.portfolioItems.filter(item => {
+          return item.id !== portItem.id;
+        })
+      })
+      return response.data;
+    }).catch(error => {
+      console.log(error);
+    });
+}
+
+handleSuccessfulFormSubmission(portfolioItem) {
+    this.setState({
+      portfolioItems: [portfolioItem].concat(this.state.portfolioItems)});
+}
+
+handleFormSubmissionError(error) {
+  console.log("Form Submission Error", error)
 }
 
 getPortfolioItems() {
@@ -28,10 +58,14 @@ componentDidMount() {
     return(
       <div className="portfolio-manager-wrapper">
         <div className="portmanager-left-side">
-          <h1>Portfolio manager form goes here</h1>
+          <PortfolioManagerForm
+           handleSuccessfulFormSubmission={this.handleSuccessfulFormSubmission} 
+           handleFormSubmissionError={this.handleFormSubmissionError} />
         </div>
         <div className="portmanager-right-side">
-          <h1>Portfolio items go here</h1>
+          <PortfolioSidebarList  
+          portItems={this.state.portfolioItems}
+          handleDeleteClick={this.handleDeleteClick}/>
         </div>
       </div>
     )

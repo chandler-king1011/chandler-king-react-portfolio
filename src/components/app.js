@@ -66,6 +66,18 @@ export default class App extends Component {
     })
   }
 
+  authorizedPages() {
+      return [<Route
+      key="1"
+      path="/manage-portfolio"
+      component={ManagePortfolio}/>,
+      <Route
+      key="2"
+      path="/manage-blog"
+      component={AddBlog}/>
+    ] 
+  }
+
   componentDidMount() {
     this.checkLoginStatus();
   }
@@ -79,18 +91,21 @@ export default class App extends Component {
             <NavigationContainer loggedInStatus={this.state.loggedInStatus} handleSuccessfulLogout={this.handleSuccessfulLogout} />
             <Switch>
               <Route exact path="/" component={Home} />
-              <Route path="/auth" render={props => (
-                <Auth 
-                {...props}
-                handleSuccessfulLogin={this.handleSuccessfulLogin}
-                handleUnSuccessfulLogin={this.handleUnSuccessfulLogin} />
-                )} />
+              <Route 
+                path="/auth" 
+                render={props => (
+                  <Auth 
+                  {...props}
+                  handleSuccessfulLogin={this.handleSuccessfulLogin}
+                  handleUnSuccessfulLogin={this.handleUnSuccessfulLogin} 
+                    />
+                  )} 
+                />
               <Route path="/about-me" component={About} />
               <Route path="/blog" component={Blog} />
               <Route path="/contact-me" component={Contact} />
-              {this.state.loggedInStatus === "LOGGED_IN" ? <Route path="/manage-blog" component={AddBlog} /> : null}
-              {this.state.loggedInStatus === "LOGGED_IN" ? <Route path="/manage-portfolio" component={ManagePortfolio} /> : null}
-              <Route exact path="/portfolio/:id" component={PortfolioDetail} />
+              {this.state.loggedInStatus === "LOGGED_IN" ? (this.authorizedPages()) : null}
+              <Route path="/portfolio/:id" component={PortfolioDetail} />
               <Route component={NoMatch} />
             </Switch>
           </div>

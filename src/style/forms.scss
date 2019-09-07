@@ -1,0 +1,27 @@
+textarea {
+    border: 1px solid $green;
+    background-color: transparent;
+    font-size: 1rem;
+    height: 100px;
+    width: 100%;
+    outline: none;
+    padding: 10px;
+    transition: 0.5s ease-in-out;
+
+    &:focus{
+        border: 1px solid $blue;
+
+    }
+}
+
+.select-element {
+    border: 1px solid $background;
+    border-radius: 3px;
+    background-color: transparent;
+    font-size: 0.8rem;
+    width: 100%;
+    overflow: hidden;
+    outline: none;
+     
+
+}

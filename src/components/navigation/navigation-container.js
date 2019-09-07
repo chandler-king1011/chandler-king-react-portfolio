@@ -28,7 +28,7 @@ const NavigationContainer = props => {
                 <NavLink to="/about-me" activeClassName="nav-link-active">About</NavLink>
             </div>
             <div className="nav-link-wrapper">
-                <NavLink  to="/blog" activeClassName="nav-link-active">Blog</NavLink>
+                <NavLink to="/blog" activeClassName="nav-link-active">Blog</NavLink>
             </div>
             <div className="nav-link-wrapper">
                 <NavLink to="/contact-me" activeClassName="nav-link-active">Contact</NavLink>
