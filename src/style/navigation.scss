@@ -3,6 +3,21 @@
     justify-content: space-between;
     padding: 30px;
 
+    .right-side {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        a {
+            margin-left: 21px;
+            color: $blue;
+            transition: 0.2s ease-in-out;
+
+            &:hover {
+                color: $darkaccent;
+            }
+        }
+    }
     .left-side {
         display: flex;
         justify-content: space-between;

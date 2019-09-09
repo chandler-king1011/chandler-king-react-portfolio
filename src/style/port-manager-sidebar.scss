@@ -1,15 +1,32 @@
 .portfolio-sidebar-list-wrapper {
     .portmanager-sidebar { 
-        padding: 21px;
+        padding: 10px;
         .port-thumb-img img {
             width: 100%;
         }
         .sidebar-title-wrapper {
             display: flex;
-            justify-content: center;
-            h1{
+            justify-content: space-between;
+            align-items: center;
+            .title{
+                font-size: 1.5em;
                 color: $green;
-            }   
+                padding-right: 21px;
+
+            }  
+            .actions {
+                @include base-grid();
+                grid-template-columns: 1fr 1fr;
+                .action-icon {
+                    cursor: pointer;
+                    font-size: 1.1em;
+                    color: $background;
+                    transition: 0.2s ease-in-out;
+                    &:hover {
+                        color: $warning;
+                    }
+                } 
+           }  
         }
     }
 }

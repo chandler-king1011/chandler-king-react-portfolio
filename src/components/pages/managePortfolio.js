@@ -11,12 +11,30 @@ export default class managePortfolio extends Component {
 
   this.state = {
     isLoading: false,
-    portfolioItems: []
+    portfolioItems: [],
+    portfolioToEdit: {}
   }
   this.getPortfolioItems = this.getPortfolioItems.bind(this);
-  this.handleSuccessfulFormSubmission = this.handleSuccessfulFormSubmission.bind(this);
+  this.handleNewFormSubmission = this.handleNewFormSubmission.bind(this);
+  this.handleEditFormSubmission = this.handleEditFormSubmission.bind(this);
   this.handleFormSubmissionError = this.handleFormSubmissionError.bind(this);
   this.handleDeleteClick = this.handleDeleteClick.bind(this);
+  this.handleEditClick = this.handleEditClick.bind(this);
+  this.clearPortfolioToEdit = this.clearPortfolioToEdit.bind(this); 
+}
+
+
+clearPortfolioToEdit() {
+    this.setState({
+      portfolioToEdit: {}
+    });
+}
+
+
+handleEditClick(portfolioItem) {
+  this.setState({
+    portfolioToEdit: portfolioItem
+  });
 }
 
 handleDeleteClick(portItem) {
@@ -32,7 +50,13 @@ handleDeleteClick(portItem) {
     });
 }
 
-handleSuccessfulFormSubmission(portfolioItem) {
+
+handleEditFormSubmission() {
+    this.getPortfolioItems();
+}
+
+
+handleNewFormSubmission(portfolioItem) {
     this.setState({
       portfolioItems: [portfolioItem].concat(this.state.portfolioItems)});
 }
@@ -59,13 +83,18 @@ componentDidMount() {
       <div className="portfolio-manager-wrapper">
         <div className="portmanager-left-side">
           <PortfolioManagerForm
-           handleSuccessfulFormSubmission={this.handleSuccessfulFormSubmission} 
-           handleFormSubmissionError={this.handleFormSubmissionError} />
+           handleNewFormSubmission={this.handleNewFormSubmission} 
+           handleEditFormSubmission={this.handleEditFormSubmission}
+           handleFormSubmissionError={this.handleFormSubmissionError} 
+           clearPortfolioToEdit={this.clearPortfolioToEdit}
+           portfolioToEdit={this.state.portfolioToEdit}
+           />
         </div>
         <div className="portmanager-right-side">
           <PortfolioSidebarList  
           portItems={this.state.portfolioItems}
-          handleDeleteClick={this.handleDeleteClick}/>
+          handleDeleteClick={this.handleDeleteClick}
+          handleEditClick={this.handleEditClick}/>
         </div>
       </div>
     )

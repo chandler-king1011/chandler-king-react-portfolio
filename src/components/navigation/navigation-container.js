@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import { withRouter } from 'react-router';
 import { NavLink } from 'react-router-dom';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 
 const NavigationContainer = props => {
@@ -40,8 +41,10 @@ const NavigationContainer = props => {
                 {props.loggedInStatus === "LOGGED_IN" ? <NavLink to="/manage-portfolio" activeClassName="nav-link-active">Portfolio Manager</NavLink> : null }  
             </div> 
         </div>
-        <div className="right-side">Chandler King</div>
-        {props.loggedInStatus === "LOGGED_IN" ? <a onClick={handleSignOut}>Sign Out</a> : null}
+        <div className="right-side">
+            <div>Chandler King</div>
+            {props.loggedInStatus === "LOGGED_IN" ? <a onClick={handleSignOut}><FontAwesomeIcon icon="sign-out-alt"/></a> : null}
+        </div>
       </div>
     );
 };

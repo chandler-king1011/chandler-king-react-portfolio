@@ -10,3 +10,32 @@
 }
 
 
+.image-uploaders {
+
+    .edit-img-wrapper{
+    img {
+        width: 100%;
+        height: 175px;
+        object-fit: cover;
+        border-radius: 5px;
+    }  
+    .img-removal-link {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+        a {
+            font-weight: 900;
+            cursor: pointer;
+            color: $blue;
+            transition: 0.2s ease-in-out;
+
+            &:hover {
+                color: $warning;
+            }
+        }
+
+    }
+
+  }
+}
+

@@ -19,7 +19,10 @@ export default class PortfolioManagerForm extends Component {
     position: "",
     thumb_image: "",
     banner_image: "",
-    logo: ""
+    logo: "",
+    editMode: false,
+    apiUrl: "https://chandlerking.devcamp.space/portfolio/portfolio_items",
+    apiAction: 'post'
   };
 
   this.handleChange=this.handleChange.bind(this);
@@ -29,11 +32,55 @@ export default class PortfolioManagerForm extends Component {
   this.handleThumbDrop=this.handleThumbDrop.bind(this);
   this.handleBannerDrop=this.handleBannerDrop.bind(this);
   this.handleLogoDrop=this.handleLogoDrop.bind(this);
+  this.handleImgDelete=this.handleImgDelete.bind(this);
 
   this.thumbRef = React.createRef();
   this.bannerRef = React.createRef();
   this.logoRef = React.createRef();
 }
+
+componentDidUpdate() {
+    if (Object.keys(this.props.portfolioToEdit).length > 0) {
+        const {
+            id,
+            name,
+            description,
+            category,
+            position,
+            url,
+            thumb_image_url,
+            banner_image_url,
+            logo_url 
+        } = this.props.portfolioToEdit;
+        this.props.clearPortfolioToEdit();
+
+        this.setState({
+            id: id,
+            name: name || "",
+            description: description ||"",
+            url: url || "",
+            category: category || "--Select Category--",
+            position: position || "",
+            editMode: true,
+            apiUrl: `https://chandlerking.devcamp.space/portfolio/portfolio_items/${id}`,
+            apiAction: "patch",
+            thumb_image_url: thumb_image_url || "",
+            banner_image_url: banner_image_url || "",
+            logo_url: logo_url || ""
+        });
+    }
+}
+
+handleImgDelete(imgType) {
+    axios.delete(`https://api.devcamp.space/portfolio/delete-portfolio-image/${this.state.id}?image_type=${imgType}`, { withCredentials: true}).then(response => {
+        this.setState({
+            [`${imgType}_url`]: ""
+        });
+    }).catch(error => {
+        console.log(error, "img delete response error");
+    });
+}
+
 
 handleThumbDrop() {
     return {
@@ -102,8 +149,17 @@ handleChange(event) {
 
 handleSubmit(event) {
     event.preventDefault();
-    axios.post("https://chandlerking.devcamp.space/portfolio/portfolio_items", this.buildForm(), { withCredentials: true}).then(response => {
-        this.props.handleSuccessfulFormSubmission(response.data.portfolio_item);
+    axios({
+        method: this.state.apiAction,
+        url: this.state.apiUrl,
+        data: this.buildForm(),
+        withCredentials: true
+    }).then(response => {
+        if (this.state.editMode){
+            this.props.handleEditFormSubmission();
+        } else {
+        this.props.handleNewFormSubmission(response.data.portfolio_item);
+    }
         this.setState({
                 name: "",
                 description: "",
@@ -112,7 +168,10 @@ handleSubmit(event) {
                 position: "",
                 thumb_image: "",
                 banner_image: "",
-                logo: ""
+                logo: "",
+                editMode: false,
+                apiUrl: "https://chandlerking.devcamp.space/portfolio/portfolio_items",
+                apiAction: 'post'
         });
         [this.thumbRef, this.bannerRef, this.logoRef].forEach(ref => {
             ref.current.dropzone.removeAllFiles();
@@ -173,21 +232,45 @@ handleSubmit(event) {
             </div>
 
             <div className="image-uploaders three-column">
+              {this.state.thumb_image_url && this.state.editMode ?
+                <div className="edit-img-wrapper">
+                    <img src={this.state.thumb_image_url} /> 
+                    <div className="img-removal-link"> 
+                        <a onClick={() => this.handleImgDelete("thumb_image")}>Delete Image</a>
+                    </div>
+                </div> :
                 <DropzoneComponent 
                 ref={this.thumbRef}
                 config={this.componentConfig()}
                 djsConfig={this.djsConfig()}
                 eventHandlers={this.handleThumbDrop()}><div className="dz-message">Thumbnail</div></DropzoneComponent>
+            }
+               {this.state.banner_image_url && this.state.editMode ?
+               <div className="edit-img-wrapper">
+                    <img src={this.state.banner_image_url} /> 
+                    <div className="img-removal-link"> 
+                        <a onClick={() => this.handleImgDelete("banner_image")}>Delete Image</a>
+                    </div>
+                </div> :
                   <DropzoneComponent 
                 ref={this.bannerRef}
                 config={this.componentConfig()}
                 djsConfig={this.djsConfig()}
                 eventHandlers={this.handleBannerDrop()}><div className="dz-message">Banner</div></DropzoneComponent>
+             }
+               {this.state.logo_url && this.state.editMode ?
+               <div className="edit-img-wrapper">
+                    <img src={this.state.logo_url} /> 
+                    <div className="img-removal-link"> 
+                        <a onClick={() => this.handleImgDelete("logo")}>Delete Image</a>
+                    </div>
+                </div> :
                   <DropzoneComponent 
                 ref={this.logoRef}
                 config={this.componentConfig()}
                 djsConfig={this.djsConfig()}
                 eventHandlers={this.handleLogoDrop()}><div className="dz-message">Logo</div></DropzoneComponent>
+             }
 
             </div>
             
