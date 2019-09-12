@@ -14,9 +14,9 @@ import NavigationContainer from "./navigation/navigation-container";
 import Home from "./pages/home";
 import About from "./pages/about";
 import Blog from "./pages/blog";
+import BlogDetail from "./pages/blog-detail";
 import Contact from "./pages/contact";
-import AddBlog from "./pages/addBlog";
-import ManagePortfolio from "./pages/managePortfolio"
+import ManagePortfolio from "./pages/managePortfolio";
 import PortfolioDetail from "./portfolio/portfolio-detail";
 import Auth from "./pages/auth";
 import NoMatch from "./pages/no-match";
@@ -75,12 +75,8 @@ export default class App extends Component {
       return [<Route
       key="1"
       path="/manage-portfolio"
-      component={ManagePortfolio}/>,
-      <Route
-      key="2"
-      path="/manage-blog"
-      component={AddBlog}/>
-    ] 
+      component={ManagePortfolio}/>
+    ]; 
   }
 
   componentDidMount() {
@@ -108,6 +104,7 @@ export default class App extends Component {
                 />
               <Route path="/about-me" component={About} />
               <Route path="/blog" component={Blog} />
+              <Route path="/b/:slug" component={BlogDetail} />
               <Route path="/contact-me" component={Contact} />
               {this.state.loggedInStatus === "LOGGED_IN" ? (this.authorizedPages()) : null}
               <Route path="/portfolio/:id" component={PortfolioDetail} />

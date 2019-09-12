@@ -72,7 +72,7 @@ getPortfolioItems() {
     });
   }).catch(error => {
     console.log("error in getPortfolioItems", error);
-  })
+  });
 }
 
 componentDidMount() {

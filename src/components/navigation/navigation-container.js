@@ -33,9 +33,6 @@ const NavigationContainer = props => {
             </div>
             <div className="nav-link-wrapper">
                 <NavLink to="/contact-me" activeClassName="nav-link-active">Contact</NavLink>
-            </div>
-            <div className="nav-link-wrapper">
-                {props.loggedInStatus === "LOGGED_IN" ? <NavLink to="/manage-blog" activeClassName="nav-link-active">Blog Manager</NavLink> : null }  
             </div> 
             <div className="nav-link-wrapper">
                 {props.loggedInStatus === "LOGGED_IN" ? <NavLink to="/manage-portfolio" activeClassName="nav-link-active">Portfolio Manager</NavLink> : null }  
