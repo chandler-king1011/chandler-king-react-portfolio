@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import BlogItem from '../blog/blog-item';
 
@@ -10,36 +11,42 @@ export default class Blog extends Component {
     this.state = {
       blogItems: [],
       totalCount: 0,
-      currentPage: 0
+      currentPage: 0,
+      isLoading: true
     };
 
     this.getBlogItems= this.getBlogItems.bind(this);
-    this.activateInfiniteScroll();
+    this.onScroll = this.onScroll.bind(this);
+    window.addEventListener("scroll", this.onScroll, false);
   }
 
 
 
 
-  activateInfiniteScroll() {
-    window.onscroll = function() {
+  onScroll() {
+      if (this.state.isLoading || this.state.blogItems.length === this.state.totalCount) {
+        return;
+      }
       if ( window.innerHeight + document.documentElement.scrollTop ===
         document.documentElement.offsetHeight) {
-      console.log("get more posts");
+          this.getBlogItems();
       }
-    }
-  };
+    };
 
   getBlogItems() {
     this.setState({
       currentPage: this.state.currentPage + 1
     });
-    axios.get("https://chandlerking.devcamp.space/portfolio/portfolio_blogs", { withCredentials: true }).then(response => {
+    axios.get(`https://chandlerking.devcamp.space/portfolio/portfolio_blogs?page=${this.state.currentPage}`, { withCredentials: true })
+    .then(response => {
       this.setState({
-        blogItems: response.data.portfolio_blogs,
-        totalCount: response.data.meta.total_records
-      })
-    }).catch(error => {
-      console.log(error);
+        blogItems: this.state.blogItems.concat(response.data.portfolio_blogs),
+        totalCount: response.data.meta.total_records,
+        isLoading: false
+      });
+    })
+    .catch(err => {
+      console.log(printWarning, err);
     });
   }
 
@@ -47,6 +54,10 @@ export default class Blog extends Component {
 
   componentWillMount() {
     this.getBlogItems();
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this.onScroll, false);
   }
 
 
@@ -57,6 +68,10 @@ export default class Blog extends Component {
     return (
       <div className="blog-container">
         <div className="content-container">{blogRecords}</div>
+        {this.state.isLoading ? 
+        <div className= "loading-content-wrapper">
+          < FontAwesomeIcon icon="spinner" spin />
+        </div> : null}
       </div>
     )
   }
