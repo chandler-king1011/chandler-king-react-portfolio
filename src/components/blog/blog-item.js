@@ -11,12 +11,12 @@ const BlogItem = props => {
     } = props.blogItem;
 
 return (
-    <div>
+    <div className="blog-item">
         <Link to={`/b/${id}`}>
             {title}
         </Link>
         <div>{content}</div>
     </div>
-    )
-}
+    );
+};
 export default BlogItem;

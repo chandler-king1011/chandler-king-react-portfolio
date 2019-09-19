@@ -3,6 +3,7 @@ import axios from 'axios';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import BlogItem from '../blog/blog-item';
+import BlogModal from '../modals/add-blog-modal';
 
 export default class Blog extends Component {
   constructor() {
@@ -12,15 +13,30 @@ export default class Blog extends Component {
       blogItems: [],
       totalCount: 0,
       currentPage: 0,
-      isLoading: true
+      isLoading: true,
+      blogModalIsOpen: false
     };
 
     this.getBlogItems= this.getBlogItems.bind(this);
     this.onScroll = this.onScroll.bind(this);
+    this.handleNewBlogClick = this.handleNewBlogClick.bind(this);
+    this.handleModalClose = this.handleModalClose.bind(this);
+    this.handleSuccessfulNewBlogSubmission = this.handleSuccessfulNewBlogSubmission.bind(this);
     window.addEventListener("scroll", this.onScroll, false);
   }
 
 
+  handleNewBlogClick() {
+    this.setState({
+      blogModalIsOpen: true
+    });
+  }
+
+  handleModalClose() {
+    this.setState({
+      blogModalIsOpen: false
+    });
+  }
 
 
   onScroll() {
@@ -37,7 +53,7 @@ export default class Blog extends Component {
     this.setState({
       currentPage: this.state.currentPage + 1
     });
-    axios.get(`https://chandlerking.devcamp.space/portfolio/portfolio_blogs?page=${this.state.currentPage}`, { withCredentials: true })
+    axios.get(`https://chandlerking.devcamp.space/portfolio/portfolio_blogs?page=${this.state.currentPage}`, {withCredentials: true})
     .then(response => {
       this.setState({
         blogItems: this.state.blogItems.concat(response.data.portfolio_blogs),
@@ -46,10 +62,17 @@ export default class Blog extends Component {
       });
     })
     .catch(err => {
-      console.log(printWarning, err);
+      console.log("getBlogItems", err);
     });
   }
 
+
+  handleSuccessfulNewBlogSubmission(blog) {
+    this.setState({
+      blogModalIsOpen: false,
+      blogItems: [blog].concat(this.state.blogItems)
+    });
+  }
 
 
   componentWillMount() {
@@ -67,12 +90,22 @@ export default class Blog extends Component {
     });
     return (
       <div className="blog-container">
+        <BlogModal 
+          handleSuccessfulNewBlogSubmission={this.handleSuccessfulNewBlogSubmission}
+          modalIsOpen={this.state.blogModalIsOpen} 
+          handleModalClose={this.handleModalClose} 
+        />
+        <div className="new-blog-link">
+          <a onClick={this.handleNewBlogClick}>
+            < FontAwesomeIcon icon="plus-square" />
+          </a>
+        </div>
         <div className="content-container">{blogRecords}</div>
         {this.state.isLoading ? 
         <div className= "loading-content-wrapper">
           < FontAwesomeIcon icon="spinner" spin />
         </div> : null}
       </div>
-    )
+    );
   }
 }
