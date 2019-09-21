@@ -95,13 +95,14 @@ export default class Blog extends Component {
           modalIsOpen={this.state.blogModalIsOpen} 
           handleModalClose={this.handleModalClose} 
         />
-        <div className="new-blog-link">
-          <a onClick={this.handleNewBlogClick}>
-            < FontAwesomeIcon icon="plus-square" />
-          </a>
-        </div>
+        {this.props.loggedInStatus === "LOGGED_IN" ?
+          <div className="new-blog-link">
+            <a onClick={this.handleNewBlogClick}>
+              < FontAwesomeIcon icon="plus-square" />
+            </a>
+          </div> : null}
         <div className="content-container">{blogRecords}</div>
-        {this.state.isLoading ? 
+        {this.state.isLoading  ? 
         <div className= "loading-content-wrapper">
           < FontAwesomeIcon icon="spinner" spin />
         </div> : null}

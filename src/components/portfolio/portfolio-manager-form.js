@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import DropzoneComponent from 'react-dropzone-component';
 
-import "../../../node_modules/react-dropzone-component/styles/filepicker.css"
+import "../../../node_modules/react-dropzone-component/styles/filepicker.css";
 import "../../../node_modules/dropzone/dist/min/dropzone.min.css";
 
 
@@ -160,6 +160,9 @@ handleSubmit(event) {
         } else {
         this.props.handleNewFormSubmission(response.data.portfolio_item);
     }
+    [this.thumbRef, this.bannerRef, this.logoRef].forEach(ref => {
+        ref.current.dropzone.removeAllFiles();
+    });
         this.setState({
                 name: "",
                 description: "",
@@ -173,9 +176,7 @@ handleSubmit(event) {
                 apiUrl: "https://chandlerking.devcamp.space/portfolio/portfolio_items",
                 apiAction: 'post'
         });
-        [this.thumbRef, this.bannerRef, this.logoRef].forEach(ref => {
-            ref.current.dropzone.removeAllFiles();
-        })
+  
     }).catch(error => {
         this.props.handleFormSubmissionError(error);
     });

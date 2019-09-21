@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import striptags from 'striptags';
+import Truncate from 'react-truncate';
 
 const BlogItem = props => {
     const {
@@ -12,10 +14,19 @@ const BlogItem = props => {
 
 return (
     <div className="blog-item">
-        <Link to={`/b/${id}`}>
-            {title}
-        </Link>
-        <div>{content}</div>
+            <Link 
+                className="blog-title-link"
+                to={`/b/${id}`}>
+                {title}
+            </Link>
+            <div>
+                <Truncate 
+                className="blog-text"
+                lines={5} 
+                ellipsis={<span>... <Link className="read-more-link" to={`/b/${id}`}>Read more</Link></span>}>
+                    {striptags(content)}
+                </Truncate>
+            </div>
     </div>
     );
 };
