@@ -1,0 +1,39 @@
+.about-body-wrapper {
+    height: calc(100vh - 84px);
+    width: 100vw;
+    grid-gap: 0px;
+    
+    .about-img-wrapper {
+        height: 100%;
+        background-size: cover;
+    }
+
+    .bio-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+        .heading-wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        
+        h2{
+            color: $blue;
+        }
+        h3{
+            background-color: $darkaccent;
+            color: $lightaccent;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    }
+
+        .bio-content {
+           padding: 100px;
+           color: $darkaccent;
+        }
+    }
+}
