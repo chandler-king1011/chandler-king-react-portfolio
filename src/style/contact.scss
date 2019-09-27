@@ -1,0 +1,73 @@
+.contact-body-wrapper {
+    height: calc(100vh - 84px);
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    .contact-info-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items:center;
+        flex-direction: column;
+        margin-bottom: 50px;
+
+
+        .phone-wrapper {
+            width: 70%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .contact-phone {
+                font-size: 1.5em;
+                color: $blue;
+            }
+        }
+
+        .email-wrapper {
+            width: 70%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .contact-email {
+                font-size: 1.5em;
+                color: $blue;
+            }
+        }
+
+        .city-wrapper {
+            width: 70%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .contact-city {
+                font-size: 1.5em;
+                color: $blue;
+            }
+        }
+
+        .social-media-wrapper {
+            width: 50%;
+            display: flex;
+            justify-content: space-between;
+
+
+        }
+
+        .icon-wrapper{
+            color: $darkaccent;
+            font-size: 3em;
+
+            .github{
+                color: #000000;
+
+            }
+            .linkedin{
+                color: #007bb5;
+            }
+            .facebook{
+                color: #3b5998;
+            }
+        }
+    }
+}

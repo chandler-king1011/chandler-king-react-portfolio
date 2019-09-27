@@ -120,7 +120,7 @@ export default class App extends Component {
                 />
               <Route path="/contact-me" component={Contact} />
               {this.state.loggedInStatus === "LOGGED_IN" ? (this.authorizedPages()) : null}
-              <Route path="/portfolio/:id" component={PortfolioDetail} />
+              <Route exact path="/portfolio/:id" component={PortfolioDetail} />
               <Route component={NoMatch} />
             </Switch>
           </div>
