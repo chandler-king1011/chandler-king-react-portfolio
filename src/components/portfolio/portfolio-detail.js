@@ -64,6 +64,10 @@ getPortfolioItem() {
           <img src={this.state.logo_url}/>
         </div>
 
+        <div className="app-title">
+          <h1>{this.state.name}</h1>
+        </div>
+
         <div className="description-wrapper">
           <div className="description">
             {this.state.description}

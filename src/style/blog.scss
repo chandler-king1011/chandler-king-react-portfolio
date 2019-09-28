@@ -3,6 +3,22 @@
     flex-direction: column;
     align-items: center;
     position: relative;
+
+    .admin-blog-wrapper{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        a{
+            color: $darkaccent;
+            font-size: 1.25em;
+            cursor: pointer;
+
+            &:hover{
+                color: $warning;
+            }
+        }
+    }
     
 
     .new-blog-link {
