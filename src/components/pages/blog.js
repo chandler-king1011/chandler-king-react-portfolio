@@ -68,8 +68,9 @@ export default class Blog extends Component {
     this.setState({
       currentPage: this.state.currentPage + 1
     });
-    axios.get(`https://chandlerking.devcamp.space/portfolio/portfolio_blogs?page=${this.state.currentPage}`, { withCredentials: true })
+    axios.get(`https://chandlerking.devcamp.space/portfolio/portfolio_blogs?page=${this.state.currentPage}`)
     .then(response => {
+      console.log("response from get blog items", response);
       this.setState({
         blogItems: this.state.blogItems.concat(response.data.portfolio_blogs),
         totalCount: response.data.meta.total_records,
@@ -110,7 +111,7 @@ export default class Blog extends Component {
 
           )
       }else {
-          return <BlogItem key={blogItem.id} blogItem={blogItem} />;}
+          return <BlogItem key={blogItem.id} blogItem={blogItem} />}
     });
     return (
       <div className="blog-container">
@@ -119,13 +120,13 @@ export default class Blog extends Component {
           modalIsOpen={this.state.blogModalIsOpen} 
           handleModalClose={this.handleModalClose} 
         />
+        <div className="content-container">{blogRecords}</div>
         {this.props.loggedInStatus === "LOGGED_IN" ?
           <div className="new-blog-link">
             <a onClick={this.handleNewBlogClick}>
               < FontAwesomeIcon icon="plus-square" />
             </a>
           </div> : null}
-        <div className="content-container">{blogRecords}</div>
         {this.state.isLoading  ? 
         <div className= "loading-content-wrapper">
           < FontAwesomeIcon icon="spinner" spin />

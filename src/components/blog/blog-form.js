@@ -105,7 +105,9 @@ handleSubmit(event) {
         data: this.buildForm(),
         withCredentials: true
     }).then(response => {
+        if (this.state.featured_image){
         this.featuredImgRef.current.dropzone.removeAllFiles();
+    }
         this.setState ({
             title: "",
             blog_status: "",

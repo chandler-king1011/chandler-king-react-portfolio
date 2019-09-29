@@ -104,14 +104,13 @@ export default class App extends Component {
                   )} 
                 />
               <Route path="/about-me" component={About} />
+
               <Route path="/blog" 
                 render={props => (
                   <Blog 
                     {...props}
                     loggedInStatus={this.state.loggedInStatus}
                  /> )} 
-              
-              
               />
               <Route path="/b/:slug"
               render={props => (

@@ -5,11 +5,34 @@
 
     .left-column {
         background-size: cover;
+
     }
     .right-column {
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: $lightaccent;
+        background-color: $background;
+    }
+}
+
+.login-form {
+    @include input-element();
+    .login-header {
+        color: $blue;
+    }
+
+    .login-error {
+        color: $warning;
+        margin-bottom: 50px;
+    }
+
+    .input-group {
+        display: flex;
+
+        svg {
+            font-size: 1.8em;
+            color: $green;
+            margin-right: 15px;
+        }
     }
 }
