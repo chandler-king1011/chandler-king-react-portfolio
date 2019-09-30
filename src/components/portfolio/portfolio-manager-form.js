@@ -217,7 +217,6 @@ handleSubmit(event) {
                 value={this.state.category}
                 onChange={this.handleChange}>
                     <option value="none">--Select Category--</option>
-                    <option value="eCommerce">eCommerce</option>
                     <option value="Enterprise">Enterprise</option>
                     <option value="Technology">Technology</option>
                     <option value="Social Media">Social Media</option>

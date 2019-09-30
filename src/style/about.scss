@@ -25,15 +25,39 @@
         }
         h3{
             background-color: $darkaccent;
-            color: $lightaccent;
+            color: $background;
             padding: 10px;
             border-radius: 5px;
         }
     }
 
         .bio-content {
+            height: 100%;
            padding: 100px;
-           color: $darkaccent;
+           color: $background;
+           background-color: $darkaccent;
+
+           .knowledge-base-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+           }
+
+           .bottom-links {
+               margin-top: 150px;
+               display: flex;
+               justify-content: center;
+
+               a{
+                   font-size:1.3em;
+                   text-decoration: none;
+                   color: $green;
+                   transition: 0.2s ease-in-out;
+
+                   &:hover{
+                       letter-spacing: 2px;
+                   }
+               }
+           }
         }
     }
 }

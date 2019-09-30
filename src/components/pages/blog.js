@@ -68,7 +68,7 @@ export default class Blog extends Component {
     this.setState({
       currentPage: this.state.currentPage + 1
     });
-    axios.get(`https://chandlerking.devcamp.space/portfolio/portfolio_blogs?page=${this.state.currentPage}`)
+    axios.get(`https://chandlerking.devcamp.space/portfolio/portfolio_blogs?page=${this.state.currentPage}`, { withCredentials: true })
     .then(response => {
       console.log("response from get blog items", response);
       this.setState({

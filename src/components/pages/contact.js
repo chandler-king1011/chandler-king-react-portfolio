@@ -17,13 +17,13 @@ export default function() {
          <div className="icon-wrapper">
            <FontAwesomeIcon icon="phone-volume" />
          </div>
-         <div className="contact-phone">1-800-111-1111</div>
+         <div className="contact-phone">385-539-7018</div>
         </div>
         <div className="email-wrapper">
           <div className="icon-wrapper">
             <FontAwesomeIcon icon="envelope" />
           </div>
-          <div className="contact-email">email@email.com</div>
+          <div className="contact-email">chandler.king1011@gmail.com</div>
         </div>
         <div className="city-wrapper">
           <div className="icon-wrapper">
