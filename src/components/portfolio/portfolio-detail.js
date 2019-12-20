@@ -75,7 +75,7 @@ getPortfolioItem() {
         </div>
 
         <div className="port-detail-bottom">
-          <a href={this.state.url} target="_blank">Visit {this.state.name}</a>
+          {!this.state.url.startsWith("https://github.com/") ? <a href={this.state.url} target="_blank">Visit {this.state.name}</a> :<a href={this.state.url} target="_blank">See Code</a> }
         </div>
       </div>
 

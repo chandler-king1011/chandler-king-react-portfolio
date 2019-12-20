@@ -9,7 +9,7 @@
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            height: 350px;
+            height: 400px;
             width: 100%;
         }
 
@@ -22,15 +22,13 @@
             align-items: center;
             height: 100%;
             text-align: center;
-            padding-left: 100px;
-            padding-left: 100px;
             .subtitle {
                 transition: 1s ease-in-out;
                 color: transparent;
             }
         }
         .img-text-wrapper:hover .subtitle {
-            color: $green;
+            color: $background;
             font-weight: 400;
         }
 
@@ -45,6 +43,5 @@
     transition: 1s;
     filter: brightness(10%);
 
-    
 }
 

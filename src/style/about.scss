@@ -1,23 +1,18 @@
 .about-body-wrapper {
-    height: calc(100vh - 84px);
     width: 100vw;
-    grid-gap: 0px;
     
-    .about-img-wrapper {
-        height: 100%;
-        background-size: cover;
-    }
 
     .bio-wrapper {
+        height: 100vh;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         
         .heading-wrapper {
+            width: 100vh;
             display: flex;
-            flex-direction: column;
-            justify-content: center;
+            justify-content: space-evenly;
             align-items: center;
         
         h2{
@@ -37,11 +32,6 @@
            color: $background;
            background-color: $darkaccent;
 
-           .knowledge-base-list {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-           }
-
            .bottom-links {
                margin-top: 150px;
                display: flex;
@@ -53,10 +43,10 @@
                    color: $green;
                    transition: 0.2s ease-in-out;
 
-                   &:hover{
-                       letter-spacing: 2px;
-                   }
                }
+             a:hover{ 
+                color: $background;
+             }
            }
         }
     }
