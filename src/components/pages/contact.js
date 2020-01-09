@@ -13,12 +13,6 @@ export default function() {
                 backgroundPosition: "center"
               }}/>
       <div className="contact-info-wrapper">
-        <div className="phone-wrapper">
-         <div className="icon-wrapper">
-           <FontAwesomeIcon icon="phone-volume" />
-         </div>
-         <div className="contact-phone">385-539-7018</div>
-        </div>
         <div className="email-wrapper">
           <div className="icon-wrapper">
             <FontAwesomeIcon icon="envelope" />

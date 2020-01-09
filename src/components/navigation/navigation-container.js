@@ -41,11 +41,6 @@ const NavigationContainer = props => {
             </div> 
         </div>
         <div className="right-side">
-            <a 
-                className="resume-link"
-                href="https://docs.google.com/document/d/e/2PACX-1vTfckJFf8xuhemL8xdCP8lW7nbtKd685mtTzu9rL_QOb4Vym7WOVJMwpcEIe__8s3hgj2wevmfeUibE/pub">
-                Resume
-            </a>
             <div>Chandler King
                 {props.loggedInStatus === "LOGGED_IN" ? <a onClick={handleSignOut}><FontAwesomeIcon icon="sign-out-alt"/></a> : null}
             </div>
