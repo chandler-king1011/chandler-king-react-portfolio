@@ -32,6 +32,11 @@
            color: $background;
            background-color: $darkaccent;
 
+           ul {
+               display: grid;
+               grid-template-columns: 1fr 1fr 1fr;
+           }
+
            .bottom-links {
                margin-top: 150px;
                display: flex;
