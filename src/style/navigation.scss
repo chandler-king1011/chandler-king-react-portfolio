@@ -4,11 +4,25 @@
     padding: 30px;
 
     .right-side {
+        width: 250px;
         display: flex;
         justify-content: space-between;
         align-items: center;
+        .resume-link {
+            color: $darkaccent;
+            text-decoration: none;
+            border-bottom: 1px solid transparent; 
+            transition: 0.2s ease-in-out;
+            &:hover {
+                border-bottom: 1px solid $green;
+            }
+        }
+        div {
+            border-bottom: 1px solid transparent; 
+        }
 
         a {
+            
             margin-left: 21px;
             color: $blue;
             transition: 0.2s ease-in-out;

@@ -90,4 +90,13 @@
     }    
   }
 
+.nav-wrapper {
+    .right-side {
+        width: 125px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+
 }
