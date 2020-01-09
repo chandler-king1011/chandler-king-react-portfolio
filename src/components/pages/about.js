@@ -7,7 +7,6 @@ export default function() {
         
           <div className="bio-wrapper">
             <div className="heading-wrapper">
-              <h2>Chandler King</h2>
               <h3>Front End Web Developer</h3>
             </div>
             <div className="bio-content">

@@ -62,7 +62,7 @@
   .bio-wrapper {
             
     .heading-wrapper {
-        width: 60vh;
+        width: 60vw;
         display: flex;
         justify-content: space-evenly;
         align-items: center;
@@ -92,11 +92,14 @@
 
 .nav-wrapper {
     .right-side {
-        width: 125px;
         display: flex;
         flex-direction: column;
         justify-content: center;
     }
+
+    .nav-link-wrapper{
+        margin-right: 5px;
+}
 }
 
 }
