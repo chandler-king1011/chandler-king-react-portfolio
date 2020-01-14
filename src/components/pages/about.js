@@ -31,7 +31,7 @@ export default function() {
               <p>
                 I have many small projects I have built using these various technologies which range from a standard full responsive navbar, to a webscraper built using python. Some of my bigger projects include a fully functioning search engine for the Daily Smarty API which was built using ReactJS and Redux. 
                 I built an eCommerce frontend using the same React and Redux as well. I recently finished building an API in NodeJS with login and full CRUD capabilities. My current project is a capstone project for the Bottega DevCamp course. The project is going to be a fully functioning bug tracking system.
-                This system will connect with the previously mentioned API. The UI will feature a fully user dashboard, bug sharing within an organization, and full CRUD capability with bugs and comments.
+                This system will connect with the previously mentioned API. The UI will feature a full user dashboard, bug sharing within an organization, and full CRUD capability with bugs and comments.
               </p>
               <p>
                 I have am very intrigued by the endless amounts of knowledge in the tech field that is available to learn. I am very open to any opportunity to learn and grow as a developer, and I feel I can be a very valuable asset to a development team.   
