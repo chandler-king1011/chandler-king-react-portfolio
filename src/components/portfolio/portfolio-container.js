@@ -3,6 +3,7 @@ import axios from 'axios';
 
 
 import PortfolioItem from "./portfolio-item";
+import FeaturedPortfolioItem from './featured-portfolio-item';
 
 export default class PortfolioContainer extends Component {
     constructor() {
@@ -74,6 +75,7 @@ export default class PortfolioContainer extends Component {
         }
         return (
             <div className="homepage-wrapper">
+                <FeaturedPortfolioItem />
                 <div className="filter-buttons">
                     <button className="btn" onClick={() => this.handleFilter("Clear_Filters")}>All</button>
                     <button className="btn" onClick={() => this.handleFilter("Enterprise")}>Enterprise</button>

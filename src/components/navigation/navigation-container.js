@@ -4,6 +4,8 @@ import { withRouter } from 'react-router';
 import { NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
+import logo from "../../../static/assets/images/logo/port_logo.png";
+
 
 
 
@@ -44,6 +46,7 @@ const NavigationContainer = props => {
             <div>Chandler King
                 {props.loggedInStatus === "LOGGED_IN" ? <a onClick={handleSignOut}><FontAwesomeIcon icon="sign-out-alt"/></a> : null}
             </div>
+            <img className="nav-wrapper__logo" src={logo} />
         </div>
       </div>
     );

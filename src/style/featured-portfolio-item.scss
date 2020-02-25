@@ -1,0 +1,19 @@
+.featured-app {
+    width: 100vw;
+    background-color: #002255ff;
+    text-decoration: none;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    .featured-app__heading-wrapper {
+        color: $lightaccent;
+    }
+    .featured-app__title-wrapper {
+        .featured-app__title {
+            color: #A80000;
+            font-family:'Metamorphous', cursive;
+        }
+    }
+
+}
