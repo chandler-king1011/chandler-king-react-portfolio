@@ -29,6 +29,10 @@
                     transition: 1s ease-in-out;
                     color: transparent;
                 }
+
+                .logo__replacement-text {
+                    color: $background;
+                }
             }
             .img-text-wrapper .subtitle {
                 color: $background;
