@@ -61,7 +61,10 @@ getPortfolioItem() {
     return(
       <div className="portfolio-detail-wrapper" >
         <div className="banner-wrapper" style={bannerImageStyle}>
-          <img src={this.state.logo_url}/>
+          {this.state.logo_url ?
+          <img src={this.state.logo_url}/> :
+          <div className="logo__replacement-text">{this.state.name}</div>
+         }
         </div>
 
         <div className="app-title">

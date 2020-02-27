@@ -26,8 +26,19 @@
                 transition: 1s ease-in-out;
                 color: transparent;
             }
+
+            .logo__replacement-text {
+                color: $darkaccent;
+                margin-bottom: 20px;
+                font-size: 1.5em;
+            }
         }
         .img-text-wrapper:hover .subtitle {
+            color: $background;
+            font-weight: 400;
+        }
+
+        .img-text-wrapper:hover .logo__replacement-text {
             color: $background;
             font-weight: 400;
         }
@@ -42,6 +53,5 @@
 .image-blur {
     transition: 1s;
     filter: brightness(10%);
-
 }
 
