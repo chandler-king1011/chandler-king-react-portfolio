@@ -224,6 +224,7 @@ handleSubmit(event) {
             </div>
             <div className="one-column">
                 <textarea
+                className="manager-form__textarea"
                 type="text"
                 name="description"
                 placeholder="Description"
