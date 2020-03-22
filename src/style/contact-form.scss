@@ -4,13 +4,14 @@
     .contact-form{
         .contact-form__input-wrapper{
             display: flex;
+            flex-direction: column;
             justify-content: space-between;
             width: 100%;
             margin-bottom: 20px;
         
             .contact-form__input{
                 height: 50px;
-                width: calc(100% - 22px);
+                width: calc(100% - 5px);
                 padding: 2px;
                 border: none;
                 border-bottom: 1px solid $green;

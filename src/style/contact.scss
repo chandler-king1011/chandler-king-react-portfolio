@@ -18,7 +18,7 @@
             justify-content: space-between;
             align-items: center;
             .contact-phone {
-                font-size: 1.5em;
+                font-size: 1em;
                 color: $blue;
             }
         }
@@ -30,8 +30,13 @@
             align-items: center;
 
             .contact-email {
-                font-size: 1.5em;
+                font-size: 1em;
                 color: $blue;
+            }
+
+            .icon-wrapper__location-email {
+                color: $darkaccent;
+                font-size: 1.5em;
             }
         }
 
@@ -41,8 +46,13 @@
             justify-content: space-between;
             align-items: center;
             .contact-city {
-                font-size: 1.5em;
+                font-size: 1em;
                 color: $blue;
+            }
+
+            .icon-wrapper__location-email {
+                color: $darkaccent;
+                font-size: 1.5em;
             }
         }
 

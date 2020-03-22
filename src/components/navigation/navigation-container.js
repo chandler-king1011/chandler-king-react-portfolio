@@ -23,23 +23,55 @@ const NavigationContainer = props => {
         })
     }
 
+    const handleHamburgerClick = () => {
+        const hamburger = document.querySelector(".hamburger-menu");
+        const navItems = document.querySelector(".left-side");
+        const currentPage = document.querySelector(".container")
+        hamburger.style.display = "none";
+        navItems.style.display = "flex";  
+        currentPage.classList.add("stop-scrolling");
+    }
+
+    const handleHamburgerExit = () => {
+        const hamburger = document.querySelector(".hamburger-menu");
+        const navItems = document.querySelector(".left-side");
+        const currentPage = document.querySelector(".container");
+        hamburger.style.display = "flex";
+        navItems.style.display = "none"; 
+        currentPage.classList.remove("stop-scrolling");
+    }
+
+    const closeMenuOnPageChange = () => {
+        const hamburger = document.querySelector(".hamburger-menu");
+        const navItems = document.querySelector(".left-side");
+        const currentPage = document.querySelector(".container");
+        console.log(navItems.style);
+        if (window.innerWidth < 768) {
+            hamburger.style.display = "flex";
+            navItems.style.display = "none"; 
+            currentPage.classList.remove("stop-scrolling");
+        }
+    }
+
     return (
       <div className="nav-wrapper">
+        <a className="hamburger-menu" onClick={handleHamburgerClick}><FontAwesomeIcon icon="bars"/></a>
         <div className="left-side">
+            <a className="hamburger-menu__exit" onClick={handleHamburgerExit}><FontAwesomeIcon icon="times"/></a>
             <div className="nav-link-wrapper">
-                <NavLink exact to="/" activeClassName="nav-link-active">Home</NavLink>
+                <NavLink exact to="/" activeClassName="nav-link-active" onClick={closeMenuOnPageChange}>Home</NavLink>
             </div>
             <div className="nav-link-wrapper">
-                <NavLink to="/about-me" activeClassName="nav-link-active">About</NavLink>
+                <NavLink to="/about-me" activeClassName="nav-link-active" onClick={closeMenuOnPageChange}>About</NavLink>
             </div>
             <div className="nav-link-wrapper">
-                <NavLink to="/blog" activeClassName="nav-link-active">Blog</NavLink>
+                <NavLink to="/blog" activeClassName="nav-link-active" onClick={closeMenuOnPageChange}>Blog</NavLink>
             </div>
             <div className="nav-link-wrapper">
-                <NavLink to="/contact-me" activeClassName="nav-link-active">Contact</NavLink>
+                <NavLink to="/contact-me" activeClassName="nav-link-active" onClick={closeMenuOnPageChange}>Contact</NavLink>
             </div> 
             <div className="nav-link-wrapper">
-                {props.loggedInStatus === "LOGGED_IN" ? <NavLink to="/manage-portfolio" activeClassName="nav-link-active">Portfolio Manager</NavLink> : null }  
+                {props.loggedInStatus === "LOGGED_IN" ? <NavLink to="/manage-portfolio" activeClassName="nav-link-active" onClick={closeMenuOnPageChange}>Portfolio Manager</NavLink> : null }  
             </div> 
         </div>
         <div className="right-side">

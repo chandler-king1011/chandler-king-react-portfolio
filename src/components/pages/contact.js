@@ -40,13 +40,13 @@ class Contact extends Component {
                 }}/>
         <div className="contact-info-wrapper">
           <div className="email-wrapper">
-            <div className="icon-wrapper">
+            <div className="icon-wrapper__location-email">
               <FontAwesomeIcon icon="envelope" />
             </div>
             <div className="contact-email">chandler.king1011@gmail.com</div>
           </div>
           <div className="city-wrapper">
-            <div className="icon-wrapper">
+            <div className="icon-wrapper__location-email">
               <FontAwesomeIcon icon="map-marked" />
             </div>
             <div className="contact-city">Salem, UT</div>

@@ -49,19 +49,36 @@
 
 
 .contact-body-wrapper {
+    margin-top: 25px;
     height: 100vh;
     width: 100vw;
     display: grid;
     grid-template-columns: 1fr;
 
+    .contact-img-wrapper {
+        display: none;
+    }
+
     .contact-info-wrapper {
         grid-row: 1;
-
         .email-wrapper {
-            display: flex;
-            flex-direction: column;
+            .icon-wrapper__location-email {
+                font-size: 1em;
+            }
+        .contact-email{ 
+            font-size: 0.8em;
         }
     }
+
+        .city-wrapper{
+            .icon-wrapper__location-email {
+                font-size: 1em;
+            }
+            .contact-city {
+                    font-size: 0.8em;
+            }
+        }
+}
 
 }
 
@@ -112,16 +129,27 @@
 }
 
 .nav-wrapper {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    height: 50px;
+    padding: 0px;
+    align-items: flex-start;
+    .hamburger-menu {
+        height: 100%;
+        width: 70vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: $darkaccent;
+        font-size: 1.2em;
+        transition: all 0.2s ease-in-out;
+    }
+
     .right-side {
+        align-self: center;
         width: 100%;
         display: flex;
-
-
+        align-content: center;
         .nav-wrapper__logo {
             width: 20px;
-            margin-left: 10px;
         }
 
         div {
@@ -132,8 +160,33 @@
             margin-left: 0px;
         }
     }
-    .nav-link-wrapper{
-        margin-right: 8px;
-}
+    .left-side {
+        overflow-y: visible;
+        width: 70vw;
+        height: 100vh;
+        background-color: black;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        z-index: 5;
+        overflow-y: visible;
+        padding-top: 20px;
+        .hamburger-menu__exit {
+            display: contents;
+            color: $lightaccent;
+        }
+
+        .nav-link-wrapper{
+            height: 20px;
+            color: $lightaccent;
+            margin-right: 8px;
+            margin-top: 20px;
+
+            a {
+                color: $lightaccent;
+            }
+        }
+    }
 }
 }
