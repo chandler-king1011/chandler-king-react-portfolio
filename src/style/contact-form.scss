@@ -1,5 +1,14 @@
 .contact-form-wrapper {
+    padding-bottom: 25px;
+    border-bottom: 1px solid $lightaccent;
+    margin-top: 25px;
     width: 70%;
+
+    .contact-form__title {
+        font-size: 1em;
+        margin-bottom: 25px;
+        color: $blue;
+    }
 
     .contact-form{
         .contact-form__input-wrapper{
@@ -42,6 +51,10 @@
             }
 
 
+        }
+
+        .contact-form__response-message {
+            color: $blue;
         }
 
         .contact-form__button {

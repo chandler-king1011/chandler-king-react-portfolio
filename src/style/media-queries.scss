@@ -49,7 +49,6 @@
 
 
 .contact-body-wrapper {
-    margin-top: 25px;
     height: 100vh;
     width: 100vw;
     display: grid;
@@ -66,7 +65,7 @@
                 font-size: 1em;
             }
         .contact-email{ 
-            font-size: 0.8em;
+            font-size: 1em;
         }
     }
 
@@ -75,7 +74,7 @@
                 font-size: 1em;
             }
             .contact-city {
-                    font-size: 0.8em;
+                    font-size: 1em;
             }
         }
 }
@@ -129,12 +128,15 @@
 }
 
 .nav-wrapper {
-    height: 50px;
+    width: 100vw;
+    height: 80px;
     padding: 0px;
+    margin: 0px;
     align-items: flex-start;
+
     .hamburger-menu {
         height: 100%;
-        width: 70vw;
+        width: 60%;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -149,11 +151,13 @@
         display: flex;
         align-content: center;
         .nav-wrapper__logo {
-            width: 20px;
+            justify-self: flex-end;
+            margin-right: 50px;
+            
         }
 
         div {
-            font-size: .6em;
+            font-size: 1em;
         }
 
         .resume-link {
@@ -162,9 +166,9 @@
     }
     .left-side {
         overflow-y: visible;
-        width: 70vw;
+        width: 60%;
         height: 100vh;
-        background-color: black;
+        background-color:$lightaccent;
         display: none;
         align-items: center;
         justify-content: center;
@@ -173,18 +177,25 @@
         overflow-y: visible;
         padding-top: 20px;
         .hamburger-menu__exit {
+            font-size: 1.5em;
             display: contents;
-            color: $lightaccent;
+            color: $blue;
+            cursor: pointer;
+            transition: 0.2s ease-in-out;
+
+            &:hover {
+                color: $darkaccent;
+            }
         }
 
         .nav-link-wrapper{
             height: 20px;
-            color: $lightaccent;
-            margin-right: 8px;
+            
+            margin-right: 0px;
             margin-top: 20px;
 
             a {
-                color: $lightaccent;
+                color: $darkaccent;
             }
         }
     }

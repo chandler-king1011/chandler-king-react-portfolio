@@ -45,7 +45,6 @@ const NavigationContainer = props => {
         const hamburger = document.querySelector(".hamburger-menu");
         const navItems = document.querySelector(".left-side");
         const currentPage = document.querySelector(".container");
-        console.log(navItems.style);
         if (window.innerWidth < 768) {
             hamburger.style.display = "flex";
             navItems.style.display = "none"; 

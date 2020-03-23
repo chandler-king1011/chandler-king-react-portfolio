@@ -10,6 +10,9 @@
         align-items:center;
         flex-direction: column;
         margin-bottom: 50px;
+        padding-top: 50px;
+        border-top: 1px solid $lightaccent;
+        border-bottom: 1px solid $lightaccent;
 
 
         .phone-wrapper {
@@ -45,6 +48,8 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding-bottom: 25px;
+            border-bottom: 1px solid $lightaccent;
             .contact-city {
                 font-size: 1em;
                 color: $blue;
