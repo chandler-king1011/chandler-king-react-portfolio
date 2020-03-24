@@ -1,47 +1,62 @@
 import React from "react" 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"; 
 
 
 export default function() {
     return (
         <div className="about-body-wrapper">
-        
-          <div className="bio-wrapper">
-            <div className="heading-wrapper">
-              <h3>Front End Web Developer</h3>
-            </div>
-            <div className="bio-content">
-              <p>
-              I am a currently a student at the Bottega DevCamp coding bootcamp. I am striving and working everyday to become a full time software developer. One of my biggest passions in the field is web development. 
-              </p>
-              <p>
-                I feel I am best suited as a front end web developer, however I am very comfortable with a lot of backend implementations as well. I am very fond of the React.js library and work with it almost daily. I have a lot of experience working with API's in React and Javascript. Nothing makes me happier than a great looking website that performs even better.
-                I do have experience with some other coding languages, frameworks, and technologies including:
-                <ul className="technology-list">
-                  <li>Vanilla JavaScript</li>
-                  <li>NodeJS</li>
-                  <li>HTML</li>
-                  <li>CSS</li>
-                  <li>Python</li>
-                  <li>MYSQL</li>
-                  <li>UML</li>
-                  <li>UI Design</li>
-                  <li>Git</li>
-                </ul>
-              </p>
-              <p>
-                I have many small projects I have built using these various technologies which range from a standard full responsive navbar, to a webscraper built using python. Some of my bigger projects include a fully functioning search engine for the Daily Smarty API which was built using ReactJS and Redux. 
-                I built an eCommerce frontend using the same React and Redux as well. I recently finished building an API in NodeJS with login and full CRUD capabilities. My current project is a capstone project for the Bottega DevCamp course. The project is going to be a fully functioning bug tracking system.
-                This system will connect with the previously mentioned API. The UI will feature a full user dashboard, bug sharing within an organization, and full CRUD capability with bugs and comments.
-              </p>
-              <p>
-                I have am very intrigued by the endless amounts of knowledge in the tech field that is available to learn. I am very open to any opportunity to learn and grow as a developer, and I feel I can be a very valuable asset to a development team.   
-              </p>
+          <div className="about-content">
+              <div className="about-grid-row">
+                <div className="image-wrapper-programming"></div>
+                <div className="about__bio">
+                  <h2>Professional</h2>
+                  <p>
+                  My name is Chandler King. I am a certified Full Stack Web Developer. 
+                  In early 2020 I completed the Bottega DevCamp Online course. I absolutely love web development. 
+                  I am very passionate about making websites that look great, and function any better. 
+                  I am currently looking to step full time into the tech world. 
+                  I am open to any and all inquires. 
+                  I am well versed in modern web development practices such as: Object Oriented Programming, REST API's, and Mobile Responsiveness. 
+                  Along my coding journey I have successfully designed, developed, launched, and maintained quite a few applications including this very website. 
+                  I am very driven and excited about what the future holds.
+                  </p>
+                </div>
+              </div>
+
+              <div className="about-grid-row">
+                <div className="about__bio">
+                  <h2>Personal</h2>
+                  <p>
+                  I am 22 years old and happily married to the love of my life.
+                  In my personal time I enjoy several activities away from the computer.
+                  I am a sports enthusiast, especially when it comes to the NFL and the Pittsburgh Steelers (Here we go Steelers, here we go!). 
+                  In addition to my sports crazed self I also enjoy being outdoors, specifically when I am able to get out on the lake and do some Bass fishing.
+                  When I am not doing one of the two activities mentioned above I am probably playing with one of my three dogs Rogue, Rose, and Rae (Yes I said three!).
+                  Last thing I should mention about myself is I am a family man first and foremost. Family and friends are everything to me. 
+                  </p>
+                </div>
+                <div className="image-wrapper-hobbies"></div>
+              </div>
+
+              <div className="about__technology">
+                <h2 className="technology__title">My Technology Toolbelt</h2>
+                <div className="technology__icons">
+                  <FontAwesomeIcon icon={["fab", "js"]} className="js" />
+                  <FontAwesomeIcon icon={["fab", "react"]} className="react" />
+                  <FontAwesomeIcon icon={["fab", "node"]} className="node"/>
+                  <FontAwesomeIcon icon={["fab", "npm"]} className="npm"/>
+                  <FontAwesomeIcon icon={["fab", "html5"]} className="html"/>
+                  <FontAwesomeIcon icon={["fab", "css3-alt"]} className="css" />
+                  <FontAwesomeIcon icon={["fab", "git"]} className="git"/>
+                  <FontAwesomeIcon icon={["fab", "python"]} className="python" />
+                  <FontAwesomeIcon icon="database" className="database"/>
+                </div>
+              </div>
+  
               <div className="bottom-links">
                 <a href="/contact-me">Contact Me</a>
               </div>
             </div>
-            
-          </div>
         </div>
     )
 }

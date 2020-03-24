@@ -10,14 +10,44 @@ import {
     faMapMarked,
     faLock,
     faBars,
-    faTimes
-
+    faTimes,
+    faDatabase
 } from "@fortawesome/free-solid-svg-icons";
-import { fab
+import { 
+    fab,
+    faReact,
+    faNode,
+    faJs,
+    faHtml5,
+    faCss3Alt,
+    faPython,
+    faNpm,
+    faGit
 } from "@fortawesome/free-brands-svg-icons";
 
 const Icons = () => {
-return library.add(faTimes, faBars, faLock, faMapMarked,fab, faEnvelope, faPhoneVolume, faTrash, faSignOutAlt, faEdit, faSpinner, faPlusSquare);
+return library.add(
+    faDatabase, 
+    faGit, 
+    faNpm, 
+    faCss3Alt, 
+    faPython, 
+    faNode, 
+    faHtml5, 
+    faJs, 
+    faReact,
+    faTimes, 
+    faBars, 
+    faLock, 
+    faMapMarked,
+    fab, 
+    faEnvelope, 
+    faPhoneVolume, 
+    faTrash, 
+    faSignOutAlt, 
+    faEdit, 
+    faSpinner, 
+    faPlusSquare);
 };
 
 export default Icons; 
