@@ -1,0 +1,43 @@
+.about__technology {
+    margin-bottom: 25px;
+    .technology__title {
+        color: $blue;
+        text-align: center;
+    }
+    .technology__icons {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-row-gap: 25px;
+        justify-items: center;
+        padding-bottom: 50px;
+        border-bottom: 1px solid $lightaccent;
+        svg {
+            font-size: 3em;
+        }
+        .js {
+            color: #f7df1e;
+        }
+        .react {
+            color: #61dbfb;
+        }
+        .node {
+            color: #68A063
+        }
+        .npm {
+            color: #CC3534;
+        }
+        .html {
+           color: #990000;
+        }
+        .css {
+           color: #0645ad
+        }
+        .git {
+            color: #3e2c00;
+        }
+        .python {
+            height: 48px;
+        }
+    }
+
+}
