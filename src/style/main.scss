@@ -26,7 +26,9 @@
 @import "./service-description.scss";
 @import "./contact.scss";
 @import "./contact-form.scss";
-@import "./media-queries.scss";
+@import "./media-queries/media-queries.scss";
+@import "./media-queries/about-mq.scss";
+@import "./media-queries/service-description-mq.scss";
 
 .stop-scrolling { 
     height: 100vh; 

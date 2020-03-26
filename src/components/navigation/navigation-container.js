@@ -30,6 +30,11 @@ const NavigationContainer = props => {
         hamburger.style.display = "none";
         navItems.style.display = "flex";  
         currentPage.classList.add("stop-scrolling");
+
+
+        if (document.querySelector(".service-descrption__wrapper")) {
+            document.querySelector(".service-descrption__wrapper").style.position = "static";
+        }
     }
 
     const handleHamburgerExit = () => {
@@ -39,6 +44,11 @@ const NavigationContainer = props => {
         hamburger.style.display = "flex";
         navItems.style.display = "none"; 
         currentPage.classList.remove("stop-scrolling");
+
+        
+        if (document.querySelector(".service-descrption__wrapper")) {
+            document.querySelector(".service-descrption__wrapper").style.position = "absolute";
+        }
     }
 
     const closeMenuOnPageChange = () => {

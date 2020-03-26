@@ -1,0 +1,22 @@
+@media (max-width: 768px) {
+
+.service-description {
+    height: 650px;
+    width: 75vw;
+    .service-descrption__wrapper {
+        height: 600px;
+        width: 60vw;
+        overflow-y: hidden;
+        
+        h2 {
+            font-size: 0.8em;
+            text-align: center;
+        }
+
+        p {
+            padding: 10px;
+            font-size: 0.8em;
+        }
+    }
+}
+}

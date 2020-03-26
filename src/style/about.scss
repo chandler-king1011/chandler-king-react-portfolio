@@ -23,14 +23,16 @@
         }
 
         .image-wrapper-programming {
+            height: 350px;
             background-image: url("../../static/assets/images/about/about-programming.jpg");
             background-size: cover;
-            background-position: top;
+            background-position: left;
             border-radius: 50px;
             box-shadow: 5px 5px 15px 2px rgba(0,34,85,0.42);
         }
 
         .image-wrapper-hobbies {
+            height: 350px;
             background-image: url("../../static/assets/images/about/about-image-sports.jpg");
             background-size: cover;
             background-position: center;

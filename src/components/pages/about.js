@@ -10,7 +10,7 @@ import Footer from '../navigation/footer';
 export default function() {
     const professionalBio = `My name is Chandler King. I am a certified Full Stack Web Developer. 
     In early 2020 I completed the Bottega DevCamp Online course. I absolutely love web development. 
-    I am very passionate about making websites that look great, and function any better. 
+    I am very passionate about making websites that look great, and function even better. 
     I am currently looking to step full time into the tech world. 
     I am open to any and all inquires. 
     I am well versed in modern web development practices such as: Object Oriented Programming, REST API's, and Mobile Responsiveness. 

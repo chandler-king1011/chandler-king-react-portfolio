@@ -6,14 +6,20 @@ export default function() {
         <div className="service-description">
             <div className="service-description__image"></div>
             <div className="service-descrption__wrapper"> 
-                <h2>What I Can Do For You</h2>
+                <h2>What can you expect from me?</h2>
                 <p>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestiae non sapiente omnis ipsa id perspiciatis expedita, dolor eos error numquam at quasi eum necessitatibus, sed in quaerat, inventore modi explicabo!
-                    Voluptatum pariatur quibusdam dolor vitae nobis ducimus dolore accusantium, est cumque. Earum, dignissimos? Iste vitae eos labore qui accusantium provident! Vel sit veritatis ex repellendus praesentium alias ab? Obcaecati, dolore.
-                    Nisi porro ducimus aliquam, rem, corporis consectetur tenetur dolore id totam mollitia magnam velit adipisci voluptates laborum? Quos officia aut sed sapiente debitis voluptates fugiat accusamus quis. Quod, neque placeat!
-                    Dicta praesentium officiis quasi ab animi illum voluptatem, sit dolorem atque, sapiente modi eum quis at laborum. Architecto consectetur dolore, vitae cumque ipsam esse est odit temporibus minima? Velit, voluptate!
-                    Aliquam blanditiis rerum qui facere, cupiditate optio sint tempora debitis consequatur, nemo, laboriosam veniam? Odio quibusdam facere recusandae, expedita, vel suscipit earum reiciendis provident harum eum consequuntur, quae at commodi?
+                    As a potential employer or client you can expect a few very specific qualities from me. As a professional I define myself in three words. 
+                    I am extemely driven, and I am so passionate about the software development world. Staying on a strong learning curve, and becoming the best developer I can be motivate me everyday.
                 </p>
+                <p>
+                    Another strong skill I have crafted over my professional career, and my development journey is adaptability. This is something I have improved immensely in the last few years. 
+                    I feel this is an essential trait for developers. Instead of getting stuck in my own ways I really strive to embrace change, and fresh perspectives.
+                </p>
+                <p>
+                    Lastly I am a very persistent person. In both my career and personal life I do not give up easy. This has helped me unequivocally in terms of learning to code. 
+                    Programming is hard, and it has revealed to me some great qualities I possess. Persistance is no exception. 
+                </p>
+                
             </div>
         </div>
     )

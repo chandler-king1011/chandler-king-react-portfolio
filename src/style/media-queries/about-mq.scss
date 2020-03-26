@@ -1,0 +1,23 @@
+@media (max-width: 768px) {
+
+.about-body-wrapper {
+    .about-content {
+        width: 80vw;
+    .about-grid-row {
+        height: 100%;
+        grid-template-columns: 1fr;
+        grid-gap: 0px;
+        grid-row-gap: 25px;
+        margin-bottom: 100px;
+        .about__bio p {
+            font-size: 0.8em;
+        }
+        .image-wrapper-programming {
+            width: 100%;
+            background-position: left;
+            grid-row: 2;
+        }
+      }
+    }
+  }
+}
