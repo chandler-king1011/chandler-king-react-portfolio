@@ -8,7 +8,7 @@
         border-top: 1px solid $lightaccent;
         padding-top: 50px;
     .about-grid-row {
-        height: min(400px);
+        height: min(350px);
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-gap: 100px;
@@ -23,20 +23,18 @@
         }
 
         .image-wrapper-programming {
-            height: 350px;
+            height: 400px;
             background-image: url("../../static/assets/images/about/about-programming.jpg");
             background-size: cover;
             background-position: left;
-            border-radius: 50px;
             box-shadow: 5px 5px 15px 2px rgba(0,34,85,0.42);
         }
 
         .image-wrapper-hobbies {
-            height: 350px;
+            height: 400px;
             background-image: url("../../static/assets/images/about/about-image-sports.jpg");
             background-size: cover;
             background-position: center;
-            border-radius: 50px;
             box-shadow: 5px 5px 15px 2px rgba(0,34,85,0.42);
         }
     }
