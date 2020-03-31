@@ -1,0 +1,8 @@
+.landing {
+    background-image: url(../../static/assets/images/landing/fog-1535201_1920.jpg);
+    background-size: cover;
+    background-position: center;
+    height: calc(100vh - 82px);
+    border-top: 2px solid $green;
+    border-bottom: 2px solid $green;
+}
