@@ -11,7 +11,9 @@ import {
     faLock,
     faBars,
     faTimes,
-    faDatabase
+    faDatabase,
+    faChevronCircleRight,
+    faChevronCircleLeft
 } from "@fortawesome/free-solid-svg-icons";
 import { 
     fab,
@@ -47,7 +49,10 @@ return library.add(
     faSignOutAlt, 
     faEdit, 
     faSpinner, 
-    faPlusSquare);
+    faPlusSquare,
+    faChevronCircleRight,
+    faChevronCircleLeft
+    );
 };
 
 export default Icons; 

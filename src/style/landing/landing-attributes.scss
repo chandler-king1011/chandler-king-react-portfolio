@@ -1,1 +1,21 @@
-.landing
+.landing-attributes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+
+    img {
+        width: 124px;
+    }
+
+    .landing-attributes__list {
+        list-style-type: none;
+        color: $background;
+        font-size: 1.5em;
+        font-weight: 600;
+
+        li {
+            margin-bottom: 10px;
+        }
+    }
+}

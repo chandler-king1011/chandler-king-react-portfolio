@@ -13,7 +13,7 @@ export default () => {
                 <li className="landing-attribute__list-item">API Development</li>
                 <li className="landing-attribute__list-item">Object Oriented Programming</li>
                 <li className="landing-attribute__list-item">SQL Databases</li>
-                <li className="landing-attribute__list-item"><a href="/about-me">See More...</a></li>
+                <li className="landing-attribute__list-item"><a href="/about-me">Read more...</a></li>
             </ul>
         </div>
     )
