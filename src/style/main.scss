@@ -10,6 +10,7 @@
 @import "./landing/landing.scss";
 @import "./landing/landing-title.scss";
 @import "./landing/landing-attributes.scss";
+@import "./landing/landing-quotes.scss";
 @import "./portfolio.scss";
 @import "./featured-portfolio-item.scss";
 @import "./portfolio-manager.scss";
@@ -32,6 +33,7 @@
 @import "./media-queries/media-queries.scss";
 @import "./media-queries/about-mq.scss";
 @import "./media-queries/service-description-mq.scss";
+@import "./media-queries/landing-mq.scss";
 
 .stop-scrolling { 
     height: 100vh; 

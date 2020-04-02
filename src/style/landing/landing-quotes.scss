@@ -1,0 +1,39 @@
+.landing-quotes  {
+    width: 60vw;
+    justify-self: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    a {
+        font-size: 2em;
+        color: $blue;
+        transition: 0.2s ease-in-out;
+
+        &:hover {
+            color: $background;
+        }
+    }
+
+    .unactive {
+        color: $darkaccent;
+        &:hover {
+            color: $darkaccent;
+        }
+    }
+    .landing-quotes__quote-wrapper {
+        width: 40vw;
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        justify-content: center;
+        font-size: 1.2em;
+        color: $background;
+
+        .landing-quotes__content {
+            justify-self: end;
+        }
+        .landing-quotes__author {
+            justify-self: end;
+        }
+
+    }
+} 

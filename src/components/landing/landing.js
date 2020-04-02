@@ -12,7 +12,6 @@ class Landing extends Component {
 
   this.state = {
     quotes: [],
-    quoteCounter: 0
   }
 }
 
@@ -54,7 +53,7 @@ class Landing extends Component {
                 <LandingAttributes />
                 {this.state.quotes.length > 1 ?
                 <LandingQuotes 
-                  quote={this.state.quotes[this.state.quoteCounter]}
+                  quotes={this.state.quotes}
                   onClick={this.nextQuote}
                 /> : 
                 null}

@@ -1,0 +1,31 @@
+@media(max-width: 768px) {
+    .landing-title-section {
+    width: 100vw;
+    grid-template-columns: 1fr;
+    font-size: 0.8em;
+
+    .landing-title__name {
+        justify-self: center;
+    }
+    .landing-title__title {
+        justify-self: center;
+    }
+  }
+
+  .landing-attributes {
+      .landing-attributes__list {
+          font-size: 1em;
+      }
+  }
+
+  .landing-quotes {
+      width: 90vw;
+  .landing-quotes__quote-wrapper {
+      width: 60vw;
+      font-size: 0.8em;
+  }
+  a {
+      font-size: 1.2em;
+  }
+}
+}

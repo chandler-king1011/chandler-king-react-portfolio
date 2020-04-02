@@ -1,10 +1,17 @@
 .landing-title-section {
+    justify-self: center;
+    width: 60vw;
     display: grid;
     grid-template-columns: 1fr 1fr;
     justify-items: center;
     align-items: center;
-
     h1 {
         color: $blue;
+    }
+    .landing-title__name {
+        justify-self: start;
+    }
+    .landing-title__title {
+        justify-self: end;
     }
 }

@@ -1,11 +1,9 @@
 import React from "react";
 
-import logo from "../../../static/assets/images/logo/port_logo.png";
 
 export default () => {
     return (
         <div className="landing-attributes">
-            <img src={logo} />
             <ul className="landing-attributes__list">
                 <li className="landing-attribute__list-item">ES6, React, and Node</li>
                 <li className="landing-attribute__list-item">UI/UX Design</li>
