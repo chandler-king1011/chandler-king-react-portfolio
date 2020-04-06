@@ -23,7 +23,7 @@ return (
                 <Truncate 
                 className="blog-text"
                 lines={5} 
-                ellipsis={<span>... <Link className="read-more-link" to={`/b/${id}`}>Read more</Link></span>}>
+                ellipsis={<span>...<Link className="read-more-link" to={`/b/${id}`}>Read more</Link></span>}>
                     {striptags(content)}
                 </Truncate>
             </div>

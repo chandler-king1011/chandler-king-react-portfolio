@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import BlogItem from '../blog/blog-item';
 import BlogModal from '../modals/add-blog-modal';
+import Footer from '../navigation/footer';
 
 export default class Blog extends Component {
   constructor() {
@@ -130,6 +131,7 @@ export default class Blog extends Component {
         <div className= "loading-content-wrapper">
           < FontAwesomeIcon icon="spinner" spin />
         </div> : null}
+        <Footer linkOne="/contact-me" linkOneName="Contact Me" linkTwo="/about-me" linkTwoName="About Me" />
       </div>
     );
   }

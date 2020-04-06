@@ -46,6 +46,14 @@
     }
 
 
+.blog-container {
+
+    .content-container {
+        width: 80vw;
+    }
+}
+
+
 
 
 .contact-body-wrapper {
@@ -102,15 +110,7 @@
 
 
 
-.blog-container {
-    .content-container{
-        width: 200px;
-        border-right: 5px solid $green;
-        border-left: 5px solid $green;
-        padding-right: 10px;
-        padding-left: 10px
-    }    
-  }
+
 
 
 .featured-app {
@@ -133,6 +133,7 @@
     padding: 0px;
     margin: 0px;
     align-items: flex-start;
+    justify-self: center;
 
     .hamburger-menu {
         height: 100%;
@@ -147,14 +148,11 @@
 
     .right-side {
         align-self: center;
-        width: 100%;
+        width: 60%;
         display: flex;
         align-content: center;
-        .nav-wrapper__logo {
-            justify-self: flex-end;
-            margin-right: 50px;
-            
-        }
+        justify-content: center;
+
 
         div {
             font-size: 1em;
