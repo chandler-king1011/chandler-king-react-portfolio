@@ -20,7 +20,6 @@ class Landing extends Component {
     Axios.get("https://api-king-contact.herokuapp.com/quotes")
     .then(response => {
       if (response.status == 200) {
-        console.log(response.data[0]);
         this.setState({
           quotes: response.data,
           currentQuote: response.data[0]
