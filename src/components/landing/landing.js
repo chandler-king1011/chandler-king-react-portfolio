@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Axios from "axios";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import LandingTitle from "./landing-title";
 import LandingAttributes from "./landing-attributes";
@@ -55,7 +56,9 @@ class Landing extends Component {
                   quotes={this.state.quotes}
                   onClick={this.nextQuote}
                 /> : 
-                null}
+                <div className= "loading-content-wrapper">
+                < FontAwesomeIcon icon="spinner" spin />
+              </div>}
             </div>
         </div>
     )
