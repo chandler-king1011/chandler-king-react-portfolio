@@ -2,46 +2,23 @@
     .portfolio-items-wrapper {
         display: grid;
         grid-template-columns: 1fr;
+        width: 80vw;
     
-        .portfolio-item-wrapper {
-            position: relative;
-    
-            .portfolio-img-background{
-                transition: 1s;
-                filter: brightness(25%);
-                background-size: cover;
-                background-position: center;
-                background-repeat: no-repeat;
-                height: 400px;
-                width: 100%;
-            }
-    
-            .img-text-wrapper {
-                position: absolute;
-                top: 0;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                height: 100%;
-                text-align: center;
+        a {
+            .text-wrapper {
+                .portofolio-title-logo-wrapper {
+                    h2 {
+                        font-size: 0.625em;
+                    }
+                }
                 .subtitle {
-                    transition: 1s ease-in-out;
-                    color: transparent;
+                    padding: 15px;
+                    font-size: 0.6em;
                 }
 
-                .logo__replacement-text {
-                    color: $background;
-                }
-            }
-            .img-text-wrapper .subtitle {
-                color: $background;
-                font-weight: 400;
             }
     
-            .logo-wrapper img {
-                margin-bottom: 20px;
-            } 
+    
         }
     }
 
