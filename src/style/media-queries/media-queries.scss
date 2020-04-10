@@ -39,12 +39,10 @@
     display: grid;
     grid-template-columns: 1fr;
 
-    .contact-img-wrapper {
-        display: none;
-    }
+
 
     .contact-info-wrapper {
-        grid-row: 1;
+        width: 80vw;
         .email-wrapper {
             .icon-wrapper__location-email {
                 font-size: 1em;

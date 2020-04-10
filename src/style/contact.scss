@@ -1,10 +1,18 @@
 .contact-body-wrapper {
-    height: calc(100vh - 84px);
     width: 100vw;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
+
 
     .contact-info-wrapper {
+        width: 65vw;
+        justify-self: center;
+        border-top: 1px solid $lightaccent;
+        border-bottom: 1px solid $lightaccent;
+        margin-top: 50px;
+        padding-top: 50px;
+        margin-bottom: 50px;
+        padding-bottom: 50px;
         display: flex;
         justify-content: space-between;
         align-items:center;

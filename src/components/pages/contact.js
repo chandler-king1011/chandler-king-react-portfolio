@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import contactImg from '../../../static/assets/images/contact/artificial-intelligence-port.jpg';
 import ContactForm from "../contact/contact-form";
+import PageBanner from "./page-banner";
 
 
 
@@ -17,12 +18,8 @@ class Contact extends Component {
   render() {
     return (
       <div className="contact-body-wrapper">
-        <div className="contact-img-wrapper"
-                style={{
-                  backgroundImage: `url(${contactImg})`,
-                  backgroundSize: "cover",
-                  backgroundPosition: "center"
-                }}/>
+        <PageBanner background={contactImg} title="Contact Me" className="contact-page-banner"/>
+
         <div className="contact-info-wrapper">
           <div className="email-wrapper">
             <div className="icon-wrapper__location-email">

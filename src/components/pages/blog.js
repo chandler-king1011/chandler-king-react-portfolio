@@ -5,6 +5,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import BlogItem from '../blog/blog-item';
 import BlogModal from '../modals/add-blog-modal';
 import Footer from '../navigation/footer';
+import PageBanner from "./page-banner";
+
+import blogImg from '../../../static/assets/images/blog/question-mark.jpg';
 
 export default class Blog extends Component {
   constructor() {
@@ -105,6 +108,7 @@ export default class Blog extends Component {
       if (this.props.loggedInStatus === "LOGGED_IN") {
           return (
             <div key={blogItem.id} className="admin-blog-wrapper">
+              <PageBanner background={blogImg} title="Blog" className="blog-page-banner" />
               <BlogItem  blogItem={blogItem} />
               <a className="trash-icon" onClick={() => this.handleDeleteClick(blogItem)}><FontAwesomeIcon icon="trash" /></a>
             </div>
@@ -115,6 +119,7 @@ export default class Blog extends Component {
     });
     return (
       <div className="blog-container">
+        <PageBanner background={blogImg} title="Blog" className="blog-page-banner" />
         <BlogModal 
           handleSuccessfulNewBlogSubmission={this.handleSuccessfulNewBlogSubmission}
           modalIsOpen={this.state.blogModalIsOpen} 

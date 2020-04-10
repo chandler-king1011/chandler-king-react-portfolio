@@ -1,0 +1,16 @@
+.page-banner {
+    height: 50vh;
+    width: 100vw;
+    .page-banner__title-wrapper {
+        height: 50px;
+        width: 30vw;
+        background-color: $green;
+        color: $blue;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 50px;
+        border-top-right-radius: 25px;
+        border-bottom-right-radius: 25px;
+    }
+}

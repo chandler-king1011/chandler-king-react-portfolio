@@ -4,6 +4,9 @@ import AboutBioGrid from '../about/about-bio-grid';
 import ServiceDescription from "../about/service-description";
 import TechnologyToolbelt from '../about/technology-toolbelt';
 import Footer from '../navigation/footer';
+import PageBanner from "./page-banner";
+
+import aboutImg from "../../../static/assets/images/about/network-earth.jpg";
 
 
 
@@ -25,6 +28,7 @@ export default function() {
 
     return (
         <div className="about-body-wrapper">
+          <PageBanner background={aboutImg} title="About Me" className="about-page-banner"/>
           <div className="about-content">
               <AboutBioGrid header="Professional" bio={professionalBio} leftImageClassName="image-wrapper-programming" />
               <AboutBioGrid header="Personal Life" bio={personalBio} rightImageClassName="image-wrapper-hobbies" />
