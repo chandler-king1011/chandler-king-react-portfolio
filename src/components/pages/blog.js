@@ -108,7 +108,6 @@ export default class Blog extends Component {
       if (this.props.loggedInStatus === "LOGGED_IN") {
           return (
             <div key={blogItem.id} className="admin-blog-wrapper">
-              <PageBanner background={blogImg} title="Blog" className="blog-page-banner" />
               <BlogItem  blogItem={blogItem} />
               <a className="trash-icon" onClick={() => this.handleDeleteClick(blogItem)}><FontAwesomeIcon icon="trash" /></a>
             </div>
