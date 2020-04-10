@@ -84,7 +84,7 @@ const NavigationContainer = props => {
         </div>
         <div className="right-side">
             {props.loggedInStatus === "LOGGED_IN" ? <a onClick={handleSignOut}><FontAwesomeIcon icon="sign-out-alt"/></a> : null}
-            <img className="nav-wrapper__logo" src={logo} />
+            <img className="nav-wrapper__logo" src={logo} alt="Chandler King Logo" />
         </div>
       </div>
     );
