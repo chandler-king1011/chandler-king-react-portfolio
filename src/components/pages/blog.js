@@ -120,7 +120,7 @@ export default class Blog extends Component {
     return (
       <div className="blog-container">
         <Helmet>
-          <title>Web Development Blog</title>
+          <title>Web Development Blog - Chandler King</title>
           <meta name="description" content="Read the most recent blog posts from full stack web development Chandler King." />
         </Helmet>  
         <PageBanner background={blogImg} title="Blog" className="blog-page-banner" />

@@ -20,7 +20,7 @@ class Contact extends Component {
     return (
       <div className="contact-body-wrapper">
         <Helmet>
-          <title>Contact Chandler King</title>
+          <title>Contact Chandler King - Full Stack Web Developer</title>
           <meta name="description" content="Get in touch with full stack web developer Chandler King." />
         </Helmet>  
         <PageBanner background={contactImg} title="Contact Me" className="contact-page-banner"/>
@@ -40,9 +40,9 @@ class Contact extends Component {
           </div>
           <ContactForm  />
           <div className="social-media-wrapper">
-              <a href='https://github.com/chandler-king1011' className="icon-wrapper"><FontAwesomeIcon className="github" icon={['fab', 'github']} /> </a>
-              <a href='https://www.linkedin.com/in/chandler-king-186491192?trk=people-guest_profile-result-card_result-card_full-click'  className="icon-wrapper"><FontAwesomeIcon className="linkedin" icon={['fab', 'linkedin']} /></a>
-              <a href='https://www.facebook.com/chandler.king.96'  className="icon-wrapper facebook"><FontAwesomeIcon className="facebook" icon={['fab', 'facebook']} /></a>
+              <a href='https://github.com/chandler-king1011' className="icon-wrapper" title="Github"><FontAwesomeIcon className="github" icon={['fab', 'github']} /> </a>
+              <a href='https://www.linkedin.com/in/chandler-king-186491192?trk=people-guest_profile-result-card_result-card_full-click'  className="icon-wrapper" title="Linked In"><FontAwesomeIcon className="linkedin" icon={['fab', 'linkedin']} /></a>
+              <a href='https://www.facebook.com/chandler.king.96'  className="icon-wrapper facebook" title="Facebook"><FontAwesomeIcon className="facebook" icon={['fab', 'facebook']} /></a>
           </div>
         </div>
       </div>

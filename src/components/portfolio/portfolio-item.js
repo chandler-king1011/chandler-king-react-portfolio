@@ -21,7 +21,6 @@ export default class PortfolioItem extends Component {
 
     render() {
     const { id, description, thumb_image_url, logo_url, name} = this.props.item;
-    console.log(description);
     return (
         <Link to={`/portfolio/${id}`}>
             <div
