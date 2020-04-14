@@ -8,7 +8,7 @@ export default function() {
         <div>
           <Helmet>
             <title>Chandler King Portfolio</title>
-            <meta name="description" content="Full stack web developer. Mobile responsive design, ES6, React, Javascript, and API development." />
+            <meta name="description" content="Portfolio website for Chandler King a full stack web developer. Chandler is experienced in full stack web development using Javascript, ES6, Node, React, MYSQL, HTML, CSS, and SCSS. Chandler also has experience with API development, OOP, and mobile responsive design." />
           </Helmet>
           <Landing />
           <PortfolioContainer />

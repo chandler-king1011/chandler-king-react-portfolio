@@ -1,4 +1,5 @@
-import React from "react" 
+import React from "react"; 
+import { Helmet } from "react-helmet";
 
 import AboutBioGrid from '../about/about-bio-grid';
 import ServiceDescription from "../about/service-description";
@@ -28,6 +29,10 @@ export default function() {
 
     return (
         <div className="about-body-wrapper">
+          <Helmet>
+            <title>About Chandler King</title>
+            <meta name="description" content="Portfolio website for Chandler King a full stack web developer. Chandler is experienced in full stack web development using Javascript, ES6, Node, React, MYSQL, HTML, CSS, and SCSS. Chandler also has experience with API development, OOP, and mobile responsive design." />
+           </Helmet>  
           <PageBanner background={aboutImg} title="About Me" className="about-page-banner"/>
           <div className="about-content">
               <AboutBioGrid header="Professional" bio={professionalBio} leftImageClassName="image-wrapper-programming" />

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Helmet } from "react-helmet";
 
 import BlogItem from '../blog/blog-item';
 import BlogModal from '../modals/add-blog-modal';
@@ -118,6 +119,10 @@ export default class Blog extends Component {
     });
     return (
       <div className="blog-container">
+        <Helmet>
+          <title>Web Development Blog</title>
+          <meta name="description" content="Read the most recent blog posts from full stack web development Chandler King." />
+        </Helmet>  
         <PageBanner background={blogImg} title="Blog" className="blog-page-banner" />
         <BlogModal 
           handleSuccessfulNewBlogSubmission={this.handleSuccessfulNewBlogSubmission}
